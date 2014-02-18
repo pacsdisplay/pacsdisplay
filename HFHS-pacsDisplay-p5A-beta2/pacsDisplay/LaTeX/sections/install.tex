@@ -1,0 +1,162 @@
+%\documentclass[../readme.tex]{subfiles} 
+%\begin{document}
+
+\section{Installation}
+% Any time you want to reference a section so it automatically updates, a label must be included. 
+\label{sec:install}
+
+HFHS-pacsDisplay may be installed by a simple Microsoft batch file that invokes an installation tcl script. Instructions for installation using this are summarized in section \ref{sec:quickinstall} below. Alternative manual installation methods are described in section \ref{sec:maninstall}. 
+
+No registry entries are made or changed by this install process and no system background services are installed. All adjustments to the display LUTs are made by a call to the graphic driver that is executed for each user upon login. 
+
+\marginnote{IMPORTANT} Once installation is complete, the behavior desired is established by editing a configuration file:
+
+% Use the \ind command to tab in a section. This was the format I settled on after several iterations. 
+\ind{
+\textnormal{../HFHS/pacsDisplay/LUTs/Current System/configLL.txt}
+}
+
+Unless changed on installation, this folder is located in the following directory based on the operating system:
+
+\ind{
+Windows 7: \textnormal{C:/Users/Public}\\
+Windows XP: \textnormal{C:/Documents and Settings/All Users}
+}
+
+If calibration LUTs for the make and model of your monitor(s) are not in the LUT-Library, you will need to use a photometer to measure the uncalibrated luminance response using lumResponse and then generate a calibration LUT using lutGenerate. 
+
+The lumResponse program supports numerous photometers. The currently recommended photometer is the X-Rite i1Display Pro which can be purchased from several suppliers for about \$225 (USD). 
+
+\subsection{Quick Installation}
+\label{sec:quickinstall}
+
+\marginnote{IMPORTANT} The installation described below will fully install executable programs and the distributed LUT-library. However, the current system described is distributed with a linear LUT that will not change monitor contrast. To achieve a calibrated display with improved contrast, the installation must be configured with the proper LUT file.
+
+\textbf{Note:} These instructions assume that you have just unzipped the pacsDisplay distribution files and are currently viewing the \textnormal{.../HFHS} directory which includes this document and the pacsDisplay folder. 
+
+Steps for installing the HFHS-pacsDisplay package: 
+
+\paragraph{Step 1} Open the \textnormal{pacsDisplay} folder and run the \textnormal{pacsDisplay\_install.bat} file.
+
+\paragraph{Step 2} Review the terms of the license agreement.
+
+\paragraph{Step 3} Select the installation options you want:
+\bigskip
+
+"The default directory for pacsDisplay programs is:'' (Change)
+
+\ind{
+Windows 7: \textnormal{C:/Program Files/HFHS/pacsDisplay}\\
+Windows XP: \textnormal{C:/Program Files (x86)/HFHS/pacsDisplay}
+}
+
+It is recommended that the default directory for installation of the pacsDisplay files be used. Shortcuts will always be installed to specifc folders in the Start Menu regardless of how this option is set. However, the shortcut targets will need to be changed if a non-default directory is specified.
+\bigskip
+
+"The default directory for the LUTs folder is:'' (Change)
+
+\ind{
+Windows 7: \textnormal{C:/Users/Public/HFHS/pacsDisplay}\\
+Windows XP: \textnormal{C:/Documents and Settings/All Users/HFHS/pacsDisplay}
+}
+
+It is recommended that the default directory for the LUTs folder be used. The directory selected is written to the \textnormal{LUTsDir.txt} file in the programs installation directory. If the LUTs folder is manually moved, the \textnormal{LUTsDIR.txt} file must be edited.
+\bigskip
+
+Options:
+\begin{enumerate}
+\item "Overwrite any previous installation?'' (Yes/No)
+
+\textbf{Default:} Yes
+
+This option should be set to "Yes'' if you want to overwrite a previous pacsDisplay installation. A "No" response will abort installation if a prior version is encountered.
+
+\item "Overwrite an existing LUTs directory?'' (Yes/No)
+
+\textbf{Default:} Yes
+
+Answering "Yes'' to this option will install a new LUTs directory along with a default \textnormal{configLL.txt} file. Typically the new release LUTs file will be installed and any user \textnormal{configLL.txt} files or LUT files will be backed up prior to installation.
+
+\item "Install grayscale calibration toolset?'' (Yes/No)
+
+\textbf{Default:} Yes
+
+Answering "Yes'' to this option will install shortcuts to the Start Menu for the various utilities that come with the pacsDisplay program. These tools are intended for IT/physics support.
+
+Answering "No'' will install only the enterprise shortcuts, which provide tools for applying and verifying the calibration. Note that only the shortcuts are not installed, the programs will still be installed in the program files directory.
+
+\item "Run the config file builder (LLconfig) after install?'' (Yes/No)
+
+\textbf{Default:} No
+
+When set to "Yes'', this option will run the LLconfig program after installation. LLconfig is a tool to help build configuration files for pacsDisplay applications. It is recommended that you not use this option unless you are familiar with LLconfig. Instructions for its use can be found in the pacsDisplay directory in the Readme file \textnormal{README-HFHS\_pacsDisplay.txt}. There will be an option to view the Readme file at the end of the install process.
+\end{enumerate}
+
+\paragraph{Step 4} Review your selections and press the "INSTALL" button when ready.
+
+\paragraph{Step 5} If the installation completes successfully, an option will be given to view the Readme file \textnormal{README-HFHS\_pacsDisplay.txt} for further details and instructions. 
+
+\subsection{Manual Installation}
+\label{sec:maninstall}
+
+The following instructions are intended for manual installation. The files and directories involved only need to be placed in the required locations. No registry entries need to be made or changed. 
+
+This package is intended for installation on a system having a \textnormal{C:/Program Files} directory, or \textnormal{C:/Program Files (x86)} for Windows 7 64 bit systems. 
+
+Unzip the \textnormal{HFHS-pacsDisplay.zip} file to \textnormal{C:/Program Files}. You should see the following path: 
+
+\ind{
+\textnormal{C:/Program Files/HFHS/pacsDisplay/..}
+}
+
+\marginnote{IMPORTANT} Do not change the organization of files under this path. 
+
+In the above path is a 'Links' directory. It contains separate directories with shortcuts for 32 bit and 64 bit system: 
+
+\ind{
+\textnormal{Links/32b\_W7-XP/shortcuts} or \textnormal{Links/64b\_W7/shortcuts}
+}
+
+Within these are shortcuts for 
+
+\ind{
+\textnormal{allUsers\_startMenu}\\
+\textnormal{allUsers\_startMenu\_programs}\\
+\textnormal{allUsers\_startMenu\_programs\_startup}
+}
+
+For Windows XP systems, these are placed in 
+
+\ind{
+\textnormal{C:/Documents and Settings/All Users/...}
+}
+
+For Windows 7 systems, these are placed in 
+
+\ind{
+\textnormal{C:/ProgramData/Microsoft/Windows/Start Menu/...}
+}
+
+where '\textnormal{...}' depends on the name of the source directory. Each of these directories is named so as to indicate where their contents should be copied to. 
+
+There are three locations indicated in the directory names: 
+
+\begin{itemize}
+\item \textnormal{allUsers\_startMenu}: \textnormal{/Start Menu} A single shortcut to iQC that places an icon at the top of the Start=>Programs menu that starts the test pattern application. 
+
+\item \textnormal{allUsers\_startMenu\_programs\_startup}: \textnormal{/Start Menu/Programs/Startup} A single shortcut to loadLUT-dcm that will load a DICOM grayscale LUT to the graphic card whenever a user logs into the system. 
+
+\item \textnormal{allUsers\_startMenu\_programs}: \textnormal{/Start Menu/Programs} There are two folders for which one or both can be moved to the appropriate directory: 
+
+\begin{itemize}
+\item HFHS ePACS grayscale\\
+Two shortcuts to start the test pattern application and to start an application that allows the user to change between a DICOM grayscale and a LINEAR grayscale. 
+
+\item HFHS Grayscale Tools\\
+A full set of shortcuts to applications for measuring the luminance response, generating calibrated LUTs, and installing LUTs. This should only be installed for qualified users. 
+\end{itemize}
+\end{itemize}
+
+It is possible to manually install the application on a drive other than \textnormal{C:/Program Files/...} If this is done, the shortcut targets summarized above need to be modified for the correct path. Each shortcut must have the 'read-only' state removed, the paths modified including the icon paths, and the shortcut saved. It is suggested that the shortcuts be set to 'read-only' after these changes are made. 
+
+%\end{document}

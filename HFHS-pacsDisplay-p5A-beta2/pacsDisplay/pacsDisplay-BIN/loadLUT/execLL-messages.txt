@@ -1,0 +1,18 @@
+#########################################################################
+#                      execLL-messages.txt                              #
+#                                                                       #
+#  Define messages reported by dialoque boxes when errors occur.        #
+#########################################################################
+
+# Define the warning message displayed if loadLUT.exe
+# returns an error and thus the LUT did not load properly.
+
+set warning "WARNING - GRAYSCALE LUT NOT INSTALLED"
+
+# Define the usage message displayed in execLoadLUT is
+# executed with an appropriate arguement.
+
+set usage "USAGE: loadLUT type (type= 'system' or 'linear')"
+
+
+

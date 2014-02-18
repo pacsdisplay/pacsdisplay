@@ -1,0 +1,33 @@
+
+ ----------------------------------------
+           iQC Key Bindings
+ ----------------------------------------
+         Bindings on arrow keys
+
+ To change image and window size
+
+       Right - Show 2X Window
+        Left - Show 1X Window
+
+ To change image size and pan image
+
+          Up - Show 2X Test Image
+        Down - Show 1X Test Image
+
+ ----------------------------------------
+           iQC Bar patterns
+ ----------------------------------------
+
+ Contrast (2 sections of 4 regions);
+
+     Outer section - 8 gray levels
+     Inner section - 2 gray levels
+
+ Frequency (4 regions in each section);
+
+     4 pixels per line pair
+     6 pixels per line pair
+    12 pixels per line pair
+    18 pixels per line pair
+
+ ----------------------------------------

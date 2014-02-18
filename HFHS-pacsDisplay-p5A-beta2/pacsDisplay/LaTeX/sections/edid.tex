@@ -1,0 +1,45 @@
+%\documentclass[../readme.tex]{subfiles} 
+%\begin{document}
+
+\section{Monitor EDIDs}
+
+Monitors need to communicate information regarding the device to the graphics card so that appropriate display communication can be established. The Video Electronics Standards Association (VESA) standardized the method to do this called the Extended Display Identification Data (EDID). The monitor device information is stored in Read Only Memory (ROM) within the monitor where it can be read by the graphic card. The EDID data structure contains information including the manufacturer, the model, the serial number, the data of manufacture. Display information includes the display size, array size and timings support for other array sizes. For further information see, \href{http://en.wikipedia.org/wiki/Extended_display_identification_data}{http://en.wikipedia.org/wiki/EDID}
+
+Various pacDisplay programs obtain EDID information from the Windows Registry to identify the monitors present on a particular workstation. This is done within loadLUT when LUT-Library searches are done to find LUTs. It is also done with lumResponse and lutGenerate to establish a display ID used to build luminance response files and LUT files. A utility tool, edidProfile, is used to quickly obtain monitor ID information for all displays on a workstation. 
+
+\subsection{getEDID}
+
+The command line program \textnormal{getEDID.exe} in the distributed package is used by several pacsDisplay programs to get information from the EDID. It takes a single argument that is the display number. The program is a core utility that is not supported by a graphic application other than EDIDprofile described in the next section. 
+
+The program uses an approach suggested by Calvin Guan, a software engineer at ATI Technologies Inc., that was posted on the internet in 2004. A series of function calls from the Windows graphics device interface GDI) library for C++ is used to get the data from the monitor’s EDID which is decoded to obtain details on the display. Visual C++ was used to build getEDID. 
+
+\subsection{EDIDprofile}
+
+When evaluating a display workstation, particularly those with multiple monitors, it is useful to be able to tabulate information from the EDIDs that document the workstation characteristics. This is particularly true when doing a QC evaluation of a system. 
+
+EDIDprofile is a utility program that sequentially executes getEDID from monitor device 1 to N. N is set in a configuration file to a value of 6.The program first obtains information from the registry regarding the workstation and it's processors. Then the EDID packets obtained are parsed to obtain:
+
+\begin{itemize}
+\item Adapter display ID
+\item Adapter string
+\item Monitor Descriptor
+\item Extended S/N
+\item Week of manufacture
+\item Year of manufacture
+\item Max. horizontal image size (mm)
+\item Max. vertical image size (mm)
+\item Horizontal array size: Native
+\item Horizontal array size: Current
+\item Vertical array size: Native
+\item Vertical array size: Current
+\item Est. hor. pixel size (microns)
+\item Est. ver. pixel size (microns)
+\end{itemize}
+
+The estimated pixel sizes are computer from the image size and array resolution. 
+
+The current and native array sizes are included since the current should always be set to the native for a digital monitor. The pixels size is computed from the image size in the EDID and is thus subject to a small error relative to manufacturers specifications. This estimate is still useful in establishing that the pixel size meets professional recommendations. 
+
+The results of EDIDprofile are recorded in a text file that can be written in a user selectable directory. The default is the \_NEW directory in which a folder is created with the workstation name. This can subsequently be used to record QC results using lumResponse.
+
+%\end{document}

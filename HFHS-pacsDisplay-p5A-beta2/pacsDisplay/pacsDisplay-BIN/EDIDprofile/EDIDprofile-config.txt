@@ -1,0 +1,40 @@
+###########################################################################
+#                    EDIDprofile-config.ts                                #
+#  Written by:                                                            #
+#    Michael J. Flynn (mikef@rad.hfh.edu)                                 #
+#                                                                         #
+#  Configurable parameters for EDIDprofile.tcl                            #
+#    - Console                                                            #
+#    - Number of EDID strings to look for.                                #
+#    - {Key Value} definitions for ddDesc mappling.                       #
+#                                                                         #
+###########################################################################
+#
+#console show
+
+set maxDisplayNum 6
+
+#**********************************************************************
+# Get the common paths.
+#
+source getInstalledPaths.txt
+#
+
+#**********************************************************************
+# Adapter strings are condensed using keyValuePairs that map
+# text values, typically to null strings.
+
+set keyValuePairs  { 
+                     " " ""       \
+                     "-" ""       \
+                     Quadro ""    \
+                     Inc.   ""    \
+                     Series ""    \
+                     /X1550 ""    \
+                     Secondary "" \
+                     "DVI" ""     \
+                     "English" "" \
+                     "Engine" ""  \
+                                }
+
+#*******************************************************************

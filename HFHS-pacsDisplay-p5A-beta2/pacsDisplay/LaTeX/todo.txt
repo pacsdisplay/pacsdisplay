@@ -1,0 +1,3 @@
+- Update LumResponse documentation to reflect the updated GEOM menu options (pixel pitch selections, auto size calculation, how to input custom selections, etc.)
+
+- If HTML output is included in QC mode, include a section describing this. 

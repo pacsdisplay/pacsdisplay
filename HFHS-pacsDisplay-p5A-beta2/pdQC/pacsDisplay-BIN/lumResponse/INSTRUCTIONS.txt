@@ -1,0 +1,124 @@
+
+README-HFHS_pacsDisplay.txt
+------------------------------------------------------------------------
+                          3.1 LumResponse
+------------------------------------------------------------------------
+
+LumResponse is used to measure the gray pallette for a display and record
+the luminance values in a uLR text file.
+
+This program will put up a large window on the screen with a grey background
+and a central target region. This pattern is intended for assessing display
+luminance response.  The grey intensity of the target region is cycled
+through increasing intensity values to measure luminance versus grey value.
+Currently the measurements are made by an IL1700 luminance meter connected
+using a serial line interface.
+
+The 'Mode' button at the top of the utility selects the type of measurement
+to be made.  The current mode is displayed in the window title.  The various
+modes are as follows:
+
+  1786 Palette - This mode is used for measuring the uncalibrated luminance
+    response of a color display.  Make sure the display is using a linear
+    LUT (i.e - no calibration) before proceeding.
+
+  766 Palette - This mode is used for measuring the uncalibrated luminance
+    response of a monochrome display.  Make sure the display is using a
+    linear LUT (i.e - no calibration) before proceeding.
+
+  QC (256x1) - This mode is used for measuring the luminance response of a
+    display after a LUT has been installed in order to verify that a DICOM
+    calibration is in place. One measurement is made for 256 driving levels.
+
+  QC (16x2) - This mode is used for measuring the luminance response of a
+    display after a LUT has been installed in order to verify that a DICOM
+    calibration is in place. Two measurements are made at each of 16 different
+    primary driving levels (8,24,40,...248). The measurements are made a driving 
+    levels just above and just below the primary driving level from which
+    the contrast is computed. For some luminance meters, color gray
+    tracking is also reported.
+
+  DEMO MODE - This mode is for demonstration purposes.  It will quickly cycle
+    from black to white but no measurements will be taken.  The IL1700 does
+    not need to be connected for the demo to run.
+
+  OTHER - This option allows the user to use a customized perturbation series
+    for the luminance measurements.  For advanced users only.
+
+The "GEOM" and "METER" buttons provide access to advanced options for the
+test image window and the photometer, respectively.  The "GEOM"
+options can be used to customize the geometry and position of the test image.
+The "METER" options include selection of the meter model and 
+settings effecting the way display luminance is measured.
+Further information is given byt "?" buttons next to each setting.
+
+Once a mode has been selected, a Display ID should be created to identify
+the measurement results once they are saved.  The name that is selected will
+be used to name the output file.
+
+The "Display #" box is used to select the display that you wish to identify.
+This number is the same as that used by Windows and listed in the Display
+Properties window.  Pressing the "GET EDID ID" button will then retrieve the
+model and serial number (S/N) information from the EDID for that display and
+use it to build the Display ID.  The result is displayed in the text box.  A
+custom ID can be entered into the text box if so desired.  It is suggested
+that the model and serial number of the display be included.
+
+The remaining portion of the lumResponse window provides the steps for the
+luminance response measurement and a button to begin each step.  They are
+described here:
+
+  Step 1: Position Test Image
+    This opens up a test image window that needs to be centered on the screen
+    of the display to be measured.  The window should be about the same size as
+    the screen.  You may want to set the display to be measured as the primary
+    display in order to get the right test window size.  Otherwise, you can
+    change the display size manually using the GEOM settings.
+
+  Step 2: Initialize Meter
+    This button begins communication with the luminance meter.  It
+    activates the meter display at the bottom of the window, providing
+    information regarding the measurement.  The details of this monitor are
+    explained further below.
+
+    At this point, the luminance meter should be setup in front of the display,
+    centered on the square target in the middle of the test window.  The end of
+    the photometer should be positioned close to the screen, but not touching it
+    in order to prevent distortions.  A dark cloth should be placed over the
+    display and photometer to block ambient light.  It is suggested that the
+    cloth not cover any vents in the back of the display as this can cause it to
+    heat up quickly and may affect the measurement.
+
+  Step 3: Record Data
+    This starts the measurement process.  The luminance meter should be properly
+    setup before hitting this button.  Pressing this button once a measurement
+    has begun will pause the measurement and provide an option to abort or
+    continue.
+
+  Step 4: Save Data
+    Press this button to save the luminance data once a measurement is complete.
+    You will be asked where to save the output file.  An option to plot the
+    luminance vs p-values is provided after the data is saved.
+
+
+  Columns for the luminance response saved file:
+
+    MEASURE - Sequential measurment number.
+
+    AVG LUMINANCE - The average luminance value measured for each gray step.
+
+    RGB VALUE - Octal RGB value for the measurement.
+
+    GRAY-STEP - The current stage of the luminance measurement.  This number
+    represents the standard graylevel (1-256).  Negative values represent the
+    colored frames that are measured at the beginning before the gray levels.
+
+    SUB-STEP - This second number represents the perturbation steps in the
+    graylevel sequence.  There are 7 steps in 1786 mode and 3 in 766 mode.  The
+    256 and Demo modes do not use sub-steps.
+
+
+    Additional indicators are displayed in small print at the bottom of the
+    monitor, without labels.  They are as follows, from left to right:
+
+    dL - Difference between the current and the prior measurement.

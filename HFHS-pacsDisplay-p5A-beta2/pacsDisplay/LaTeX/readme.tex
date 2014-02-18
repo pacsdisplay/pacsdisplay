@@ -1,0 +1,29 @@
+\documentclass[10pt,letterpaper]{article}
+% The document class is like the old tex version. Page size and font size are defined here. I try to use relative units for everything (ems instead of cms); that way they scale with the fonts. 
+
+\input{input/preamble}
+
+% There is a separate print.bat file included with the documentation. Running it will print
+% the full manual and each section as a separate pdf. This should be done following
+% any changes of the section files.
+
+\begin{document}
+
+% Put the title page and other frontmatter files here
+% The \input command takes the other file and just inserts is verbatim. It is different
+% from \include because \include does things like generate separate aux files and clearpage commands.
+% I'm using the include command so I can use \includeonly to selectively print specific sections
+
+\include{input/title}
+
+% Include the section files below
+
+\include{sections/install}
+\include{sections/applications}
+\include{sections/lumresponse}
+\include{sections/lutgen}
+\include{sections/loadlut}
+\include{sections/lutlibrary}
+\include{sections/edid}
+
+\end{document}

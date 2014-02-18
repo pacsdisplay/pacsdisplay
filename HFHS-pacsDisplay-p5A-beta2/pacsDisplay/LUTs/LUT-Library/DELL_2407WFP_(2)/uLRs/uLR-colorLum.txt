@@ -1,0 +1,6 @@
+# luminance for red (#ff0000), green (#00ff00) and blue (#0000ff)
+# 2 files
+#   r2g      b2g       Lmin      Lmax      red       grn       blu    FILE
+# 0.26067  0.09863     0.447   357.500    66.600   255.500    25.200  Average
+  0.25251  0.10039     0.582   342.000    65.400   259.000    26.000  uLR_DELL_2407WFP_CC30265A1WDS.txt
+  0.26905  0.09683     0.312   373.000    67.800   252.000    24.400  uLR_DELL_2407WFP_CC30271A1R4S.txt

@@ -1,0 +1,8 @@
+# luminance for red (#ff0000), green (#00ff00) and blue (#0000ff)
+# 4 files
+#   r2g      b2g       Lmin      Lmax      red       grn       blu    FILE
+# 0.30219  0.14137     0.472   406.000    86.200   285.250    40.325  Average
+  0.29110  0.13938     0.457   411.000    85.000   292.000    40.700  uLR_Samsung-NL.txt
+  0.30374  0.13844     0.456   419.000    89.300   294.000    40.700  uLR_Samsung-NR.txt
+  0.31123  0.14638     0.532   398.000    85.900   276.000    40.400  uLR_Samsung-SL.txt
+  0.30323  0.14158     0.442   396.000    84.600   279.000    39.500  uLR_Samsung-SR.txt

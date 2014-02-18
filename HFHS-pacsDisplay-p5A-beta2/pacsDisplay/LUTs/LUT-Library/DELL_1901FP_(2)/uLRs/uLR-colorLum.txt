@@ -1,0 +1,6 @@
+# luminance for red (#ff0000), green (#00ff00) and blue (#0000ff)
+# 2 files
+#   r2g      b2g       Lmin      Lmax      red       grn       blu    FILE
+# 0.43456  0.13736     0.244   229.000    63.750   146.700    20.150  Average
+  0.43154  0.13692     0.243   242.000    66.500   154.100    21.100  uLR_DELL_1901FP_ABL2.txt
+  0.43790  0.13783     0.245   216.000    61.000   139.300    19.200  uLR_DELL_1901FP_ADQK.txt

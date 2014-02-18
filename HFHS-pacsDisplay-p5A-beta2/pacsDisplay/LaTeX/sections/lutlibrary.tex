@@ -1,0 +1,80 @@
+%\documentclass[../readme.tex]{subfiles} 
+%\begin{document}
+
+\section{The LUT-Library}
+\label{sec:lutlibrary}
+
+Section \ref{sec:lutcal} above explains how the loadLUT program can search the LUT-Library to find a appropriate LUT. Using the LUTsearch option, the LUT-Library is searched to find a LUT matching the manufacturer, model, and serial number obtained from the EDID data for each monitor found. In not found, loadLUT looks for a generic LUT. 
+
+This section explains how the LUT-Library is organized and how generic LUTs can be built using the uLRstats tool.
+
+\subsection{LUT-Library directories}
+
+The LUT-library contains a collection of uncalibrated luminance response files (uLR files) and calibration look-up table files (LUT files). The files are organized in directories with names based on the model descriptor (manufacturer\_model) normally encountered when reading the EDID from a monitor device. The number in parenthesis indicates the number of monitors having uLR files within the directory. The letter g after the parenthetic number indicates that a generic lut file has been prepared and is included. 
+
+Within each monitor directory, for example \textnormal{DELL\_2007FP\_(10g)}, There are two subdirectories call uLRs and LUTs. Typically a number of monitors will be evaluated using lumResponse to obtain uLRs with filenames that begin with uLR and contain the manufacturer, model, and serial number. For example,
+\ind{
+\textnormal{uLR\_DELL\_2007FP\_C953667D38RL.txt}\\
+in \textnormal{.../LUTs/LUT-Library/DELL\_2007FP\_(10g)/uLRs/}
+}
+The uLRs directory may also contain plot results from uLRstats which is explained in the section \ref{sec:genericluts}. 
+
+Calibration look-up tables files built using lutGenerate are stored in the LUTs directory. For example,
+\ind{
+\textnormal{LUT\_DELL\_2007FP\_C953667D38RL\_0.10\_217.00\_350.00.txt}\\
+in \textnormal{.../LUTs/LUT-Library/DELL\_2007FP\_(10g)/LUTs/}
+}
+These files will begin with LUT, will contain the manufacturer, model, and serial number, and will have the values for Lamb, Lmax, and Luminance ratio that were used to build the LUT. If multiple LUT files are present, as may be the case if several are generated with different luminance ratio values, the <S/N> or GENERIC expression can be appended with \_* characters. In this case the file used under the /LUTsearch option will be the first found with alphabetic listing. 
+
+The monitor directory may also contain a generic LUT built using uLRstats and a README file with information explaining how and why the monitor was added to the LUT-Library. For example,
+\ind{
+\textnormal{LUT\_DELL\_2007FP\_GENERIC\_0.18\_227.90\_350.00.txt}\\
+in \textnormal{.../LUTs/LUT-Library/DELL\_2007FP\_(10g)}
+}
+The serial number section of the filename is replaced with 'GENERIC' for these files. 
+
+Since loadLUT searchs the LUT-library as a part of the /LUTsearch option, the location of the library and the library structure should be maintained as installed. 
+
+The file names for LUT files should be of the form
+\ind{
+LUT\_<model\_name>\_<S/N>\_*
+}
+where <S/N> can be either the 4 digit VESA EDID number or the extended VESA EDID number and * can be any addition characters The model\_name is that returned in the VESA EDID as the model descriptor and is commonly of the form "DELL 2007FP" with the spaces replaced by '\_' characters. If a generic lut is desired it should be selected or built using the uLRstats utility and placed at the top of the model name directory in the format 
+\ind{
+LUT\_<model\_name>\_GENERIC* 
+}
+
+If a new monitor folder is built, email the pacDisplay contact person identified at the beginning of the file to make arrangements for inclusion of the new monitors in the next LUT-Library release. A log file is maintained in the LUT-Library folder documenting the history of contributed monitor folders. The LUT-Library folder also has a file documenting the current version number, VERSION\_INFO.txt. The version information is read and shown using the ChangeLUT program. Beginning with version pacsDisplay version 5A, the LUT-Library version is maintained separate from the program installation package version. 
+
+\subsection{uLRstats (generic LUTs)}
+\label{sec:genericluts}
+
+Experience has shown that monitors with the same manufacturer and model will have an uncalibrated response file that is similar except for brightness variations. This results if a manufacturer changes the model designation when the LCD panel used for a product line is changed. In this case, a generic LUT can be used for DICOM calibration without having to measure the S/N specific uLR and create an S/N specific LUT. 
+
+uLRstats is a tool to evaluate the uLRs of a set of monitors, identify those to used as a basis of a generic uLR, and produce a file with the average luminance for each palette entry. This can then be used with lutGenerate to build the generic LUT file. 
+
+When uLRstats is first run, use the SELECT button to select the directory with a set of uLRs to be evaluated. Within the Select window, first use the Path button to select the uLR directory from the Folder Browse window. The window should open with the \_NEW directory of the LUT-Library where new monitor folders can be built. Closing the window with OK enters the selected folder path in the filePath entry. Assuming the uLRs all have filenames of the form uLR*.txt, use the Glob button to build a list of filenames, then highlight the files to be evaluated using SHIFT+<LEFT CLICK> and CTRL+<LEFT CLICK>. After files are selected, close the Select window with OK. The processing bar at the bottom of the application window will change to indicated the number of uLRs to analyze. Use this button to begin. 
+
+During the analysis, the uLRs are checked for unusually large changes in luminance, dL/L. These are recorded in the log file. A dialogue window with report the total number and offer to open the log file. It is not unusual to have a modest number of out of limit changes. 
+
+The analysis will create six files in the uLR directory:
+
+\ind{
+\textbf{uLR\_DELL\_2007FP\_GENERIC.txt} \enskip The average uLR
+
+\textbf{uLR-LminLmax} \enskip A table of Lmin, Lmax, and filename for each uLR processed. This can be useful when evaluating which files may not want to be included in the generic uLR. The order of these files corresponds to the number in the plots.
+
+\textbf{uLR-plot.gpl} \enskip Gnuplot command file to generate three plots shown in a window and saved as png files.
+ 
+\textbf{uLR-Plot\_LminLmax.png} \enskip Plot of Lmax vs Lmin
+
+\textbf{uLR-Plot-dL\_L.png} \enskip Plot of the dL/L values for each palette entry and file.
+
+\textbf{uLR-PlotULRs.png} \enskip Plot of luminance vs palette entry for each file.
+}
+
+Typically, uLRs are evaluated in two steps. First all uLRs are evaluated. Those monitors with atypical uLRs are then identified from the plots. Then a second analysis is done using only typical uLRs. 
+
+When done, a generic LUT can be built with lutGenerate.
+
+%\end{document}
