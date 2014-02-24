@@ -1,0 +1,10 @@
+# log file for getEDID v1.1
+2/12/2014 19:50
+Error Code = 2
+argv[0] =  C:\XIRL\BIN\HFHS\pacsDisplay\HFHS-pacsDisplay-p5A\pacsDisplay\pacsDisplay-BIN\EDIDprofile\getEDID.exe
+argv[1] =  6
+
+
+DISPLAY 6: 
+
+ERROR: **PSEUDO DISPLAY DEVICE FOUND**

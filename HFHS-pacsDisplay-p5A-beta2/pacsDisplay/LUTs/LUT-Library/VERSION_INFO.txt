@@ -1,7 +1,0 @@
-LUT_libr. Version: 4C_1, 20110601
-
-Beginning with package version 4C, the LUT-library
-can be upgraded while keeping the same program package.
-The copy distributed with the release has a version
-appended with _1. Later version of the library will
-increase the appended number.

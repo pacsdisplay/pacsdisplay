@@ -1,0 +1,18 @@
+
+--- Palette size of 1786 found in first file
+
+
+--- Processing File 1: uLR_EA234WMi_35101882TW.txt ---
+
+
+--- Processing File 2: uLR_EA234WMi_35101888TW.txt ---
+
+
+--- Processing File 3: uLR_EA234WMi_35101889TW.txt ---
+
+
+--- Processing File 4: uLR_EA234WMi_35101893TW.txt ---
+
+
+--- Processing Average File: uLR_EA234WMi_35101893TW_GENERIC.txt---
+
