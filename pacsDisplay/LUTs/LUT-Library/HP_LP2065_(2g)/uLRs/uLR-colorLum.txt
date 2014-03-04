@@ -1,6 +1,0 @@
-# luminance for red (#ff0000), green (#00ff00) and blue (#0000ff)
-# 2 files
-#   r2g      b2g       Lmin      Lmax      red       grn       blu    FILE
-# 0.33764  0.13118     0.256   193.412    46.901   138.908    18.222  Average
-  0.37364  0.13819     0.284   188.019    49.180   131.625    18.190  uLR_HP_LP2065_CNG933003J.txt
-  0.30523  0.12487     0.227   198.806    44.623   146.191    18.254  uLR_HP_LP2065_CNG9330040.txt

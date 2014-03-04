@@ -1,8 +1,0 @@
-# Lmin and Lmax for all files analyzed
-# 4 files
-#   Lmin      Lmax      FILE
-#    0.630   224.333   Average
-     0.645   220.395  uLR_EA234WMi_35101882TW.txt
-     0.622   228.883  uLR_EA234WMi_35101888TW.txt
-     0.638   216.027  uLR_EA234WMi_35101889TW.txt
-     0.617   232.025  uLR_EA234WMi_35101890TW.txt

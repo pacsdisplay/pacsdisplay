@@ -1,2 +1,0 @@
-# Directory to the LUTs folder
-C:/Users/Public/HFHS/pacsDisplay

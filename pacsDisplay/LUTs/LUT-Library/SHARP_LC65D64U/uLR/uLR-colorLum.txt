@@ -1,5 +1,0 @@
-# luminance for red (#ff0000), green (#00ff00) and blue (#0000ff)
-# 1 files
-#   r2g      b2g       Lmin      Lmax      red       grn       blu    FILE
-# 0.27417  0.19658     0.133   415.390    78.169   285.110    56.047  Average
-  0.27417  0.19658     0.133   415.390    78.169   285.110    56.047  uLR_SHARP_LC65D64U_NA.txt
