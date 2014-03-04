@@ -1,0 +1,5 @@
+# luminance for red (#ff0000), green (#00ff00) and blue (#0000ff)
+# 1 files
+#   r2g      b2g       Lmin      Lmax      red       grn       blu    FILE
+# 0.33414  0.11968     0.316   365.000    83.200   249.000    29.800  Average
+  0.33414  0.11968     0.316   365.000    83.200   249.000    29.800  uLR_DELL_2405FPW_T613358G3N0S.txt

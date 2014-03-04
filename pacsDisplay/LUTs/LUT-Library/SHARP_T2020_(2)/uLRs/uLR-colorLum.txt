@@ -1,0 +1,6 @@
+# luminance for red (#ff0000), green (#00ff00) and blue (#0000ff)
+# 2 files
+#   r2g      b2g       Lmin      Lmax      red       grn       blu    FILE
+# 0.36836  0.16694     0.390   184.000    44.350   120.400    20.100  Average
+  0.38607  0.16148     0.368   188.000    47.100   122.000    19.700  uLR_SHARP_T2020_2A000111Y.txt
+  0.35017  0.17256     0.411   180.000    41.600   118.800    20.500  uLR_SHARP_T2020_3A001361.txt

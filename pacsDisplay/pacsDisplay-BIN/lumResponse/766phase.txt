@@ -1,0 +1,6 @@
+#This is a luminence phase table for lumResponse
+#766 mode
+3
+0	0	0
+1	0	0
+0	1	1

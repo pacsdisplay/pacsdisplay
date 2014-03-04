@@ -1,0 +1,32 @@
+#**********************************************************************
+#
+#                  config-uStats
+#
+#  Define the starting file path variable, 'lumFilePath', which is
+#  used as the directory that appears by default when LUT files
+#  are selected  using the select_files procedure called in the
+#  uLRstats application. The default glob phrase must also be
+#  defined as 'globName',
+#
+#**********************************************************************
+# Get the common paths.
+#
+source getInstalledPaths.txt
+#
+#**********************************************************************
+# Set variable values
+#
+#	... starting image path for select window (end in /)
+set filePath $lumFilePath
+#
+#	... starting image filename pattern for glob list
+set globName uLR*.txt
+#
+#	... dL/L from each file and from average is tested
+#	    to see that is is below an upper limit and above
+#	    a lower limit. If not, a warning is written in the
+#	    log file
+set lowLimit -0.01
+set hiLimit  0.1
+#
+#**********************************************************************

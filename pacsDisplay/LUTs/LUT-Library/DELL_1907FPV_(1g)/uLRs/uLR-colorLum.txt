@@ -1,0 +1,5 @@
+# luminance for red (#ff0000), green (#00ff00) and blue (#0000ff)
+# 1 files
+#   r2g      b2g       Lmin      Lmax      red       grn       blu    FILE
+# 0.26851  0.10435     0.209   235.000    45.700   170.200    17.760  Average
+  0.26851  0.10435     0.209   235.000    45.700   170.200    17.760  uLR_DELL_1907FPV_CC38867GACHC.txt

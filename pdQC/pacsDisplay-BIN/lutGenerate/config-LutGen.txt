@@ -1,0 +1,18 @@
+#**********************************************************************
+#
+#                  config-LutGen
+#
+#  Define the starting file path variable, 'filePath', which is
+#  used as the directory that appears by default when LUT files
+#  are selected  using the select_files procedure called in the
+#  uLRstats application. The default glob phrase must also be
+#  defined as 'globName',
+#
+#**********************************************************************
+# Get the common paths.
+#
+source getInstalledPaths.txt
+#
+#**********************************************************************
+#console show
+

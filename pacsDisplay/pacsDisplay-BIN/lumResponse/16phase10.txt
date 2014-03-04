@@ -1,0 +1,13 @@
+#Phase table for evaluating meter luminance precision.
+#Save the 16phase.txt file elsewhere, temporarily rename this 16phase.txt, then use the QC 16x2 mode.
+10
+8	8	8
+8	8	8
+8	8	8
+8	8	8
+8	8	8
+8	8	8
+8	8	8
+8	8	8
+8	8	8
+8	8	8

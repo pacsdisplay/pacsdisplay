@@ -1,0 +1,7 @@
+# luminance for red (#ff0000), green (#00ff00) and blue (#0000ff)
+# 3 files
+#   r2g      b2g       Lmin      Lmax      red       grn       blu    FILE
+# 0.36633  0.13367     0.197   349.000    66.733   182.167    24.350  Average
+  0.39263  0.13825     0.230   332.000    85.200   217.000    30.000  uLR_DELL_2408WFP_JU4368281FMS.txt
+  0.30318  0.13949     0.098   347.000    23.800    78.500    10.950  uLR_DELL_2408WFP_JU43682B28MS.txt
+  0.36335  0.12789     0.262   368.000    91.200   251.000    32.100  uLR_DELL_2408WFP_JU43683617VS.txt
