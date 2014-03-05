@@ -18,5 +18,6 @@
 *.gnu binary
 *.xls binary
 *.bat binary
+*.gpl binary
 
 
