@@ -1,3 +1,6 @@
+# Tell the export process to ignore the .gitattributes file
+.gitattributes export-ignore
+
 # Set default behaviour, in case users don't have core.autocrlf set.
 * text=auto
 
