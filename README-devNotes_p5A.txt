@@ -572,6 +572,10 @@ DEVELOPMENT HISTORY:
                   uLRstats     section 6
               Install application revised to open pd-manual.pdf.
 
+-----------------------------------------------------------------------------
+02/20/2014  - Released Package 5A_beta3 (limited release at HFHS)
+-----------------------------------------------------------------------------
+
 02/21/2014  - Resolved a problem in lumResponse and QC-check with the path to the
               html template and logo files. The full path is now defined with the
               apps_path variable used for wrapped applications. The full file path
@@ -586,14 +590,30 @@ DEVELOPMENT HISTORY:
               No problems have otherwise been detected with the userDir, logDir and 
               lumFilePath (i.e. path to _NEW) defined in getInstalledPaths.txt.
 
+02/22/2014  - In QC-check, the files path for the getCLR procedure changed
+              to make it available in the procedure global space.
+              When passed as an arguement, it failed on XP systems because of spaces.
+
+03/05/2014  - Verified byte count equivalence of the package zip downloaded from GitHub
+              The .gitattributes has been configured to not export hidden Git files
+              and to treat text and log files with CRLF line endings (Windows type).
+
 -----------------------------------------------------------------------------
-02/22/2014  - Released Package 5A_beta3b (release outside HFHS)
+03/05/2014  - Released Package 5A_beta3b (release outside HFHS)
+
+              This package can be downloaded from pacsdisplay.org
+                   The package contents will remain the same,
+                   however the devNotes file will be updated
+                   with beta feedback shown below.
 -----------------------------------------------------------------------------
 
-ToDo        - LLconfig application is not adding the LUT path arguement to the search option line
+ToDo        - pdlaunch dependant on _NEW directory. If not found, make it but don't fail.
+              Check the message reported if the BIN directory is not found.
+            - html table from evalQC: criteria for MEAN JND/GL wrong. Either - or <3 or ~2
+            - LLconfig application is not adding the LUT path arguement to the search option line
             - Open the html file at end of evalQC routine and
               consider not showing the gnuplot sequence.
-            - verify the equivalence of the NEC version of the i1 Display Pro.
+            - verify the equivalence of the NEC & xRite versions of the i1 Display Pro.
             - update LUTlibrary:
                    - review folder names for (n)
                    - verify that names on EA231, EA234 generic files are working
