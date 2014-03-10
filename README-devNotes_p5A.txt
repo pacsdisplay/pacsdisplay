@@ -598,8 +598,14 @@ DEVELOPMENT HISTORY:
               The .gitattributes has been configured to not export hidden Git files
               and to treat text and log files with CRLF line endings (Windows type).
 
+03/08/2014  - Corrected the QC chart reference values for JNDs/DL in the html template
+              to a value of 2.25 +/- 0.25. This value was shown in a spreadsheet to
+              cover the range for Lmax from 200 to 600 and LR from 250 to 400.
+              Additionally the logo png file was converted to grayscale and reduced in size.
+              lumResponse and QC-check were rebuilt.
+
 -----------------------------------------------------------------------------
-03/05/2014  - Released Package 5A_beta3b (release outside HFHS)
+03/08/2014  - Released Package 5A_beta3b (release outside HFHS)
 
               This package can be downloaded from pacsdisplay.org
                    The package contents will remain the same,
@@ -607,9 +613,10 @@ DEVELOPMENT HISTORY:
                    with beta feedback shown below.
 -----------------------------------------------------------------------------
 
-ToDo        - pdlaunch dependant on _NEW directory. If not found, make it but don't fail.
+ToDo for 5A final release:
+
+            - pdlaunch dependant on _NEW directory. If not found, make it but don't fail.
               Check the message reported if the BIN directory is not found.
-            - html table from evalQC: criteria for MEAN JND/GL wrong. Either - or <3 or ~2
             - LLconfig application is not adding the LUT path arguement to the search option line
             - Open the html file at end of evalQC routine and
               consider not showing the gnuplot sequence.
@@ -626,24 +633,6 @@ ToDo        - pdlaunch dependant on _NEW directory. If not found, make it but do
                      (see NOTE02, README_beta3.txt)
 
 
-ZIBI ENCOUNTERED BUGs (W7 32b)
-ToDo        - lumResponse crash seen on zibi (Win7 32b),
-                   "ActiveState basekit has stopped working" error when record button pushed.
-              The message box was changed in lumResponse which is where it was failing.
-              This needs to be followed to see if the problem continues.
-              Changes were made to remove the modified message box which is
-              where the failure occurred.
-                 -> no problems detected using beta3 version.
-
-ToDo        - loadLUT-dicom executing from the startup folder on zibi (Win7 32b)
-              appears to run at login and load the LUT based on the log.txt file,
-              but the grayscale comes up linear. When the shortcut is executed
-              from that directory it works.  I think another startup process is
-              setting a linear LUT after loadLUT. A delay may be needed.
-              http://windows.microsoft.com/en-us/windows7/change-color-management-settings.
-              Testing to date indicates that it loads with a power shutdown and restart.
-              At a minimum, there needs to be documentation about W7 color management settings.
-                -> This was resolved in beta3 by using a delay of 1000 mSec (see README_beta3.txt)
 
 -----------------------------------------------------------------------------
 BUGS - ACTIVE
@@ -651,70 +640,79 @@ BUGS - ACTIVE
 
 .. loadLUT:
 
-4/14/06 - Observed an error after rebooting a system and quickly logging
- in.  LoadLUT could not write to the second backup file and returned
- an error.  Subsequently running LoadLUT did not return an error.
- This error was seen again following a 2nd reboot and log in.
- Waiting an additional minute to log in did not result in the same error.
+04/14/06 - Observed an error after rebooting a system and quickly logging
+           in.  LoadLUT could not write to the second backup file and returned
+           an error.  Subsequently running LoadLUT did not return an error.
+           This error was seen again following a 2nd reboot and log in.
+           Waiting an additional minute to log in did not result in the same error.
 
 .. loadLUT, getEDID, LLconfig:
-10/21/2008 - Rarely, the monitor number found by getEDID will not
-  agree with the monitor numbers show on the Windows display settings
-  application. loadLUT may attempt to configure a monitor and find
-  that it is not attached. The reasons for this are believed to be 
-  associated with virtual displays often found with remote system
-  management applications. The fix is to find what display number
-  the monitor is found at and manually edit configLL.txt to direct loadLUT
-  to the proper monitor number. Note that configLL.txt can specify
-  non-contiguous monitor numbers. The EDIDprofile application provided
-  with version 4A is a useful tool to do identify the windows display number.
+10/21/08 - Rarely, the monitor number found by getEDID will not
+           agree with the monitor numbers show on the Windows display settings
+           application. loadLUT may attempt to configure a monitor and find
+           that it is not attached. The reasons for this are believed to be 
+           associated with virtual displays often found with remote system
+           management applications. The fix is to find what display number
+           the monitor is found at and manually edit configLL.txt to direct loadLUT
+           to the proper monitor number. Note that configLL.txt can specify
+           non-contiguous monitor numbers. The EDIDprofile application provided
+           with version 4A is a useful tool to do identify the windows display number.
 
 -----------------------------------------------------------------------------
 BUGS - RESOLVED:
 -----------------------------------------------------------------------------
 
-4/27/06 - Under a user account with less than Administrator privelages,
-          the loadLUT program gets stuck during the EDID read process and is
-          non-responsive.  Current solution is the /noEDID option.
+04/27/06 - Under a user account with less than Administrator privelages,
+           the loadLUT program gets stuck during the EDID read process and is
+           non-responsive.  Current solution is the /noEDID option.
  
-7/24/06 - Solution is to set the "C:\Program Files\HFHS"
-          folder to give all users Full Control access.
+07/24/06 - Solution is to set the "C:\Program Files\HFHS"
+           folder to give all users Full Control access.
 
 10/12/06 - Encountered above issue again with a DIRAD network account.
-          Had to add security access (Full Control) for the account separately since
-          it was not included under the local user accounts.
+           Had to add security access (Full Control) for the account separately since
+           it was not included under the local user accounts.
 
-11/21/06 - 
- loadLUT 2.3, When both /noEDID and /LDTsearch are set in the configLL.txt
-          file, loadLUT tries to build a target filename without manufacturer dates.
-          /LDTsearch was changed so that it cancels the search if no EDID information
-          is available.
- LLconfig 1.1, Fixed a problem involving capitalization of
-          "LUTsearch" and "LDTsearch" in the configLL.txt file.
+11/21/06 - loadLUT 2.3, When both /noEDID and /LDTsearch are set in the configLL.txt
+           file, loadLUT tries to build a target filename without manufacturer dates.
+           /LDTsearch was changed so that it cancels the search if no EDID information
+           is available.
+           LLconfig 1.1, Fixed a problem involving capitalization of
+           "LUTsearch" and "LDTsearch" in the configLL.txt file.
 
-4/27/06 - NVRotate (when a display is in portrait mode) causes an error
-          where loadLUT cannot find the EDID for the rotated display in the
-          registry.  Since this kind of error is currently treated as a fatal
-          error by loadLUT, the LUT for that display is not loaded.
-          Currently there is no solution except to skip the EDID read sequence
-          using the /noEDID option. The problem has been reported to nVidia
-          but we have not received a response.
+04/27/06 - NVRotate (when a display is in portrait mode) causes an error
+           where loadLUT cannot find the EDID for the rotated display in the
+           registry.  Since this kind of error is currently treated as a fatal
+           error by loadLUT, the LUT for that display is not loaded.
+           Currently there is no solution except to skip the EDID read sequence
+           using the /noEDID option. The problem has been reported to nVidia
+           but we have not received a response.
 12/18/06 - Updated NVIDIA drivers (vers 84, 3/2006) no longer have this issue.
 
+ZIBI ENCOUNTERED BUGs (W7 32b)
+02/20/14 - lumResponse crash seen on zibi (Win7 32b),
+           "ActiveState basekit has stopped working" error when record button pushed.
+           The message box was changed in lumResponse which is where it was failing.
+           Changes were made to remove the modified message box which is
+           where the failure occurred. As a consequence, the message box is appearing
+           in the center of the screen which is often under the photometer.
+              -> no problems detected using beta3 version.
+
+02/20/14 - loadLUT-dicom executing from the startup folder on zibi (Win7 32b)
+           appears to run at login and load the LUT based on the log.txt file,
+           but the grayscale comes up linear. When the shortcut is executed
+           from that directory it works.  I think another startup process is
+           setting a linear LUT after loadLUT. A delay may be needed.
+              http://windows.microsoft.com/en-us/windows7/change-color-management-settings.
+           Testing to date indicates that it loads with a power shutdown and restart.
+           At a minimum, there needs to be documentation about W7 color management settings.
+              -> This was resolved in beta3 by using a delay of 1000 mSec (see README_beta3.txt)
 
 -----------------------------------------------------------------------------
 TODO:
 -----------------------------------------------------------------------------
 
 ++++ DOCUMENTATION and HELP ++++
-
-.. Convert the current README-HFHS_pacsDisplay.txt file
-   to an HTML help document with images similar to the original
-   documentation in P. Tchous thesis.
-   The application help button (?) could be set up to
-   open the html version at the appropriate section.
-   The DOC file was left out of the 5a package, but consider
-   including particularly if a few new papers get published.
 
 .. Need a way to easily identify what LUTs have been installed
    by parsing the config log file.
@@ -761,10 +759,12 @@ TODO:
 
 ++++ PACKAGE and INSTALL ++++
 
-.. put doc files in package.
 
 ++++ DEVELOPMENT ENVIRONMENT ++++
 
 .. make_install.tcl script to move new exe files to BIN.
    (only for development use)
+
+.. Change the release environment to remove the dependency
+   on the activeState devkit wrapping application (licensed application).
    
