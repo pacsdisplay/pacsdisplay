@@ -598,14 +598,23 @@ DEVELOPMENT HISTORY:
               The .gitattributes has been configured to not export hidden Git files
               and to treat text and log files with CRLF line endings (Windows type).
 
+-----------------------------------------------------------------------------
+02/20/2014  - Released Package 5A_beta3b (limited release at HFHS)
+-----------------------------------------------------------------------------
+
 03/08/2014  - Corrected the QC chart reference values for JNDs/DL in the html template
               to a value of 2.25 +/- 0.25. This value was shown in a spreadsheet to
               cover the range for Lmax from 200 to 600 and LR from 250 to 400.
               Additionally the logo png file was converted to grayscale and reduced in size.
               lumResponse and QC-check were rebuilt.
 
+
+03/22/2014  - lumResponse: increased the output format for luminance and chromaticity
+              when writing uLR or cLR files to 7 digits beyond the decimal to support
+              the precision of the values recorded with the i1 Display Pro photometer.
+
 -----------------------------------------------------------------------------
-03/08/2014  - Released Package 5A_beta3b (release outside HFHS)
+03/22/2014  - Released Package 5A_beta3c (release outside HFHS)
 
               This package can be downloaded from pacsdisplay.org
                    The package contents will remain the same,
