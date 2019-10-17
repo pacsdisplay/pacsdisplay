@@ -18,22 +18,19 @@ the Argyll Color Management System (www.argyllcms.com)
 which can report luminance (cd/m2) or illuminance (lux)
 depending on the position of the diffuser shield.
 For either luminance or illuminance, spotread reads the
-chromaticity as CIE x,y values which i1meter converts to u',v'.
+chromaticity as CIE u',v'.
 
         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                                      USAGE
-- START:
+- READ:
 	With the meter connected to a USB port,
-	the START button initializes measures that
-	are then continuously updated.
+	the READ button measures the desired value
+	the number of times required by avgN.
 
 		Note: The i1Display Pro integration
 		      time varies with luminance.
 		      Measure are slow at low luminance.
 
-- STOP:
-	The STOP button will halt measurements but
-	leave values on the screen so they may be recorded.
 
         - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
                                      OPTIONS
