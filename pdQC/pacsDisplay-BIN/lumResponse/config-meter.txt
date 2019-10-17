@@ -1,18 +1,19 @@
 # config-meter.txt
-###########################################################################
-#              i1DisplayPro-meter Configuration File                      #
-#                                                                         #
-#     This file must be kept in the same directory as i1DisplayPro-meter. #
-#     Set variables as indicated below to configure for                   #
-#     This file contains Tcl commands so preserve the # at the beginning  #
-#     of the comment lines.                                               #
-#                                                                         #              
-#       Copyright:       Xray Imaging Research Laboratory                 #
-#                               Henry Ford Health System                  #
-#                               Detroit, MI                               #
-#                                                                         #
-#                        M.J Flynn,  DEC 2013                             #
-###########################################################################
+#############################################################################
+#              i1DisplayPro-meter Configuration File                      	#
+#                                                                        	#
+#     This file must be kept in the same directory as i1meter. 				#
+#     Set variables as indicated below to configure for                  	#
+#     This file contains Tcl commands so preserve the # at the beginning  	#
+#     of the comment lines.                                               	#
+#                                                                         	#              
+#       Copyright:       Xray Imaging Research Laboratory                 	#
+#                               Henry Ford Health System                  	#
+#                               Detroit, MI                               	#
+#                                                                         	#
+#                        M.J Flynn,  DEC 2013                             	#
+#					     N.B Bevins, OCT 2019							  	#
+#############################################################################
 #console show
 #
 #**********************************************************************
@@ -25,7 +26,7 @@ set avgN     2     ;# number of meter readings for average result.
 #  The xRite i1Display Pro photometer is the only currently
 #  supported meter. It provides both illuminance and luminance.
 
-    set meter i1DisplayPro ;# must be a defined type
+set meter i1DisplayPro ;# must be a defined type
 
 #**********************************************************************
 # message posted when the application first starts.
@@ -34,8 +35,8 @@ set i1msg " REQUIRED COLORIMETER
 \t i1Display Pro
 - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 The i1meter application currently supports
-only the Xrite i1Display Pro colorimeter.
-Plug this into a USB port and press START.
+only the X-Rite i1Display Pro colorimeter.
+Plug this into a USB port and press READ.
 
 \t www.xrite.com/i1display-pro
 "
