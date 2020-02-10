@@ -44,7 +44,7 @@ set pitch(1)  0.165
 set pitch(2)  0.210
 set pitch(3)  0.230
 set pitch(4)  0.270
-set pitchNum  4
+set pitchNum  1
 
 #**********************************************************************
 #   ... Set the height and width for the test Image
