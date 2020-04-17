@@ -1,6 +1,6 @@
 # LRconfig.txt
 ###########################################################################
-#              lumResponse Configuration File (vers.  2.1)                #
+#              lumResponse Configuration File (vers.  2.2)                #
 #                                                                         #
 #     This file must be kept in the same directory as lumResponse.tcl     #
 #     Set variables as indicated below to configure for                   #
@@ -24,6 +24,7 @@
 #                        M.J Flynn  05/11                                 #
 #                        M.J Flynn  11/13                                 #
 #                        N.B Bevins 10/19                                 #
+#                        N.B Bevins 04/20                                 #
 ###########################################################################
 # Variable definitions that may need changing for different installations.
 #
@@ -45,7 +46,13 @@ set pitch(2)  0.210
 set pitch(3)  0.230
 set pitch(4)  0.270
 set pitchNum  1
-
+#
+#**********************************************************************
+#   ... Set the default LUTmode when LR is launched
+#       options are 1786, 766, 256, 52, 18, 16, 11, or 1
+#
+set LUTmode 18
+#
 #**********************************************************************
 #   ... Set the height and width for the test Image
 #       along with the size of the gray level rectangle.
