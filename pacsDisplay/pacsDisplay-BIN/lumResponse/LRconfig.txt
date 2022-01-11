@@ -1,31 +1,32 @@
 # LRconfig.txt
-###########################################################################
-#              lumResponse Configuration File (vers.  2.2)                #
-#                                                                         #
-#     This file must be kept in the same directory as lumResponse.tcl     #
-#     Set variables as indicated below to configure for                   #
-#               Unix Xwindows or Windows,                                 #
-#               Display size and colormap type.                           #
-#               Directory for applications invoked.                       #
-#     This file contains Tcl commands so preserve the # at the beginning  #
-#     of the comment lines.                                               #
-#                                                                         #              
-#       Copyright:       Xray Imaging Research Laboratory                 #
-#                               Henry Ford Health System                  #
-#                               Detroit, MI                               #
-#                                                                         #
-#                        M.J Flynn,  6/99                                 #
-#                                   12/99                                 #
-#                                    6/01                                 #
-#                        P. Tchou,   8/02                                 #
-#                                   11/02                                 #
-#                                   12/06                                 #
-#                        M.J Flynn  10/08                                 #
-#                        M.J Flynn  05/11                                 #
-#                        M.J Flynn  11/13                                 #
-#                        N.B Bevins 10/19                                 #
-#                        N.B Bevins 04/20                                 #
-###########################################################################
+#############################################################################
+#              lumResponse Configuration File (vers.  2.2c)					#
+#																			#
+#     This file must be kept in the same directory as lumResponse.tcl		#
+#     Set variables as indicated below to configure for						#
+#               Unix Xwindows or Windows,									#
+#               Display size and colormap type.								#
+#               Directory for applications invoked.							#
+#     This file contains Tcl commands so preserve the # at the beginning	#
+#     of the comment lines.													#
+#																			#              
+#       Copyright:		Xray Imaging Research Laboratory					#
+#                               Henry Ford Health System					#
+#                               Detroit, MI									#
+#																			#
+#						M.J Flynn	06/99									#
+#									12/99									#
+#									06/01									#
+#						P. Tchou	08/02									#
+#                       			11/02									#
+#									12/06									#
+#						M.J Flynn	10/08									#
+#						M.J Flynn	05/11									#
+#						M.J Flynn	11/13									#
+#						N.B Bevins	10/19									#
+#						N.B Bevins	04/20									#
+#						N.B Bevins	01/22									#
+#############################################################################
 # Variable definitions that may need changing for different installations.
 #
 #
@@ -106,13 +107,16 @@ set LUTmode 18
 #
 #**********************************************************************
 #   Parameters associated with automated luminance measurement
-#   lumResponse supports multiple Photometer models;
-#         IL1700       - International Light IL 1700 
-#         LXcan        - IBA Dosimetry LXcan
-#         i1Display2   - xRite i1Display 2   photometer
-#         i1DisplayPro - xRite i1Display Pro photometer
+#   lumResponse supports multiple Photometer models:
+#		(prev. supported meters were deprecated in move to W10)
+#		i1DisplayPro - X-Rite i1Display Pro photometer (i1d3)
 
     set meter i1DisplayPro ;# must be a defined type
+	
+#	For the i1d3 photometer, set an environment variable to allow for
+#	3rd party meters that aren't already included in spotread
+
+	set ::env(I1D3_ESCAPE) e8d1a980d146f7ad
 
 #   There is a set of photometer acquition parameters that are
 #   set for each model. The parameters are described below.
@@ -172,7 +176,7 @@ set LUTmode 18
 #   ... verboselog
 #	   Sets the verbose logging option.
 #        If set to 1, the log file will include ALL values
-#	   output by the IL1700 during a measurement.  Set to 0 otherwise.
+#	   output by the photometer during a measurement.  Set to 0 otherwise.
 #
 #**********************************************************************
 #   As a meter is selected using the radio button controls,
@@ -185,7 +189,7 @@ proc setMeter {} {
 	global outlierNum outlierpause verboselog numLumLX Lamb
 
 	if       {$meter == "i1DisplayPro" } {
-    		set model "X-Rite i1Display Pro Photometer"  ;# text at top of meter display
+    	set model "X-Rite i1Display Pro Photometer"  ;# text at top of meter display
 
 		set iLcalVal      1.000    ;# multiplicative calibration factor
 		set iLdelay           0    ;# meter measures skipped after gray change
@@ -197,7 +201,7 @@ proc setMeter {} {
 		set outlierNum        5    ;# number of retries attempted before a message.
 		set outlierpause   1000    ;# additional delay (milliseconds) for outlier testing
 		set verboselog        0    ;# set to 1 for verbose log, 0 otherwise
-		set Lamb           0.10    ;# set to 0.10 for QC  16x2 plot analysis.
+		set Lamb           0.10    ;# set to 0.10 for QC analysis.
 	} else {
 		tk-MessageBoxMod -type ok -message "Undefined Photometer type in LRconfig.txt"
 	}
