@@ -1,0 +1,61 @@
+# config-meter.txt
+#############################################################################
+#              i1DisplayPro-meter Configuration File                      	#
+#                                                                        	#
+#     This file must be kept in the same directory as i1meter. 				#
+#     Set variables as indicated below to configure for                  	#
+#     This file contains Tcl commands so preserve the # at the beginning  	#
+#     of the comment lines.                                               	#
+#                                                                         	#              
+#       Copyright:       Xray Imaging Research Laboratory                 	#
+#                               Henry Ford Health System                  	#
+#                               Detroit, MI                               	#
+#                                                                         	#
+#						M.J Flynn,  DEC 2013							  	#
+#						N.B Bevins	OCT 2019							  	#
+#						N.B Bevins	JAN 2022								#
+#############################################################################
+#console show
+#
+#**********************************************************************
+# Get the common paths.
+#
+source getInstalledPaths.txt
+#**********************************************************************
+# Variable definitions:
+#
+set iLcalVal 	1.0   	;# luminance calibration value.
+set avgN     	2     	;# number of meter readings for average result.
+set delay		3		;# default delay between reads (in sec)
+set unimode		9		;# default mode is 9-point (corners, edges, center)
+set Lsteps		3		;# default number of steps is 3 (also available 1, 18)
+set Lamb		0.10	;# default Lamb (cd/m^2)
+# set the uniformity meas't levels for the different number of steps
+set uniL(1)		210
+set uniL(3)		{30 120 210}
+set uniL(18)	{0 15 30 45 60 75 90 105 120 135 150 165 180 195 210 225 240 255}
+
+#**********************************************************************
+#  The xRite i1Display Pro photometer is the only currently
+#  supported meter. It provides both illuminance and luminance.
+
+set meter i1DisplayPro ;# must be a defined type
+
+#	For the i1d3 photometer, set an environment variable to allow for
+#	3rd party meters that aren't already included in spotread
+
+set ::env(I1D3_ESCAPE) e8d1a980d146f7ad
+
+#**********************************************************************
+# message posted when the application first starts.
+
+set i1msg " REQUIRED COLORIMETER
+\t i1Display Pro
+- - - - - - - - - - - - - - - - - - - - - - - - - - - 
+The i1meter application currently supports
+only the X-Rite i1Display Pro colorimeter.
+Plug this into a USB port and press READ.
+
+\t www.xrite.com/i1display-pro
+"
+#**********************************************************************
