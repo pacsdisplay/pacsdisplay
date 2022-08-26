@@ -1,10 +1,11 @@
-Package Version: 5A,   10-FEB-2014
+Package Version: 5G,   22-JUL-2022
 
 |---------------------------------|
 |    HFHS-pacsDisplay Versions    |
 |                                 |
 |    Authors:     M. Flynn        |
 |                 P. Tchou        |
+|			   	  N. Bevins		  |
 |---------------------------------|
 
 INCLUDED PROGRAM VERSIONS:
@@ -13,9 +14,9 @@ Install      1.4
 Uninstall    1.4
 
 ChangeLUT    1.4
-gtest        1.2        pdQC
-iQC          1.0g       pdQC
-lumResponse  2.1        pdQC
+gtest        1.3        pdQC
+iQC          2.2        pdQC
+lumResponse  2.3        pdQC
 LutGenerate  2.5        pdQC
 uLRstats     1.1        pdQC
 
