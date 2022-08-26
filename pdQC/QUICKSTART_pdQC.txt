@@ -1,0 +1,38 @@
+#########-#########-#########-#########-#########-#########-#########-###
+#                                                                       #
+#                         pdQC                                          #
+#                                                                       #
+#  Microsoft Windows applications to display grayscale test patterns    #
+#  and verify grayscale calibration.                                    #
+#                                                                       #
+#                           N. Bevins                                   #
+#                           Jul 2022                                    #
+#                                                                       #
+#########-#########-#########-#########-#########-#########-#########-###
+#                                                                       #
+#  GENERAL PUBLIC LICENSE:                                              #
+#  HFHS-pacsDisplay                                                     #
+#  Copyright (C) 2022  Henry Ford Health		                        #
+#########-#########-#########-#########-#########-#########-#########-###
+#                                                                       #
+#                           pdQC usage                                  #
+#                                                                       #
+#  The pdQC folder is intended to be moved to portable storage          #
+#  so that pacsDisplay programs can be run on a workstation without     #
+#  installation of the full pacsDisplay package.                        #
+#  The primary usage is for QC validation of a DICOM grayscale          #
+#  luminance response whether by internal or graphic card LUTs.         #
+#                                                                       #
+#  The program 'pdLaunch.exe' should be run first. This provides        #
+#  buttons to start the programs included in the pdQC set.              #
+#  The programs are the same as for pacsDisplay except for those        #
+#  associated with loading LUTs to the graphic card.                    #
+#  The organization of files within pdQC must not be changed.           #
+#                                                                       #
+#  NOTE: For some workstations, security settings may                   #
+#        prohibit running from a USB memory device.                     #
+#        In this case copy the pdQC folder to the workstation.          #
+#        If this is also prohibited, you will need to contact the       #
+#        system administrator to adjust the system settings.		    #
+#                                                                       #
+#########-#########-#########-#########-#########-#########-#########-###
