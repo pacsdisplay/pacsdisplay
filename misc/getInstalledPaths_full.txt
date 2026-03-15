@@ -1,0 +1,51 @@
+#**********************************************************************
+#
+#                  getInstalledPaths script commands
+#
+#  A pacsDisplay TCL script commands to determine directory paths that
+#  are common to programs in the pacsDisplay package.
+#  This is typically sourced at the beginning within a config file.
+#
+#  It is assumed that the program is executed in a subdirectory,
+#       ../programName/program.exe
+#  .. where .. is either the installation or the development folder.
+#  For programs that have been installed with the pacsDisplay
+#  installer, a file will exist in .. called LUTsDir.txt
+#  that has the path to the directory with the LUTs and LOGs directories.
+#
+#  The following global variables are define
+#      userDir       : Path to the LUTs and LOGs directory
+#      logDir        : Path to _LOTgs where log files are written
+#      lumFilePath   : Path to _NEW directory for saving uLR/cLR files
+#      LIB           : Path to LIB in where common programs are stored
+#      gnuplot       : Path to the gnuplot executable in LIB.
+#
+#**********************************************************************
+# Get the paths to the LUTs directory and the _NEW directory.
+#
+    set installPath [file dirname [file dirname [pwd]]]           ;# path to installation root
+    set LUTsDirFile [file join $installPath LUTsDir.txt]          ;# check if this is an installation
+    if {[file exists $LUTsDirFile]} {
+        set FID         [open [file join $installPath LUTsDir.txt] r] ;# file written at installation
+        set line1       [gets $FID]                                   ;# read past label
+        set userDir     [gets $FID]                                   ;# path to LUTs, written at installation.
+        close $FID
+        set logDir      [file join $userDir LOGs]                     ;# directory for logs
+        set lumFilePath [file join $userDir LUTs LUT-Library _NEW]    ;# directory for new lumResponse folders
+    } else {
+     set logDir [pwd]                                                 ;# otherwise assume it is pdQC
+     set lumFilePath [file join [file dirname [file dirname [pwd]]] _NEW]
+     set userDir     [file join [file dirname [file dirname [pwd]]] HFHS-pacsDisplay-p5a pacsDisplay]
+    }
+
+#**********************************************************************
+#   ... Set the path to to the LIB routine
+#       and for the gnuplot program (common to pdQC)
+#
+# Use for installed package
+    set LIB         [file join [file dirname [pwd] ] LIB]
+
+# Folder in LIB for version of gnuplot distributed.
+    set gnuplot     [file join $LIB gnuplot46-bin wgnuplot.exe]
+#
+#**********************************************************************

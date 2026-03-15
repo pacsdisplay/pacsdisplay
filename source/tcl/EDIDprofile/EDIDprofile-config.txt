@@ -1,0 +1,48 @@
+###########################################################################
+#                    EDIDprofile-config.ts                                #
+#  Written by:                                                            #
+#    Michael J. Flynn (mikef@rad.hfh.edu)                                 #
+#    Nicholas B. Bevins (nick.bevins@mainehealth.org)                     #
+#                                                                         #
+#  Configurable parameters for EDIDprofile.tcl                            #
+#    - Console                                                            #
+#    - Number of EDID strings to look for.                                #
+#    - {Key Value} definitions for ddDesc mapping.                        #
+#                                                                         #
+###########################################################################
+#
+#console show
+
+set maxDisplayNum 6
+
+#**********************************************************************
+# Get the common paths.
+#
+	source [file join [file dirname [info script]] .. getInstalledPaths.txt]
+#
+#
+#**********************************************************************
+# Enable/disable logging of EDID calls (1 yes, 0 no)
+#
+	set logging 0
+#
+#
+#**********************************************************************
+# Adapter strings are condensed using keyValuePairs that map
+# text values, typically to null strings.
+
+set keyValuePairs  { 
+                     " " ""       \
+                     "-" ""       \
+                     Quadro ""    \
+					 (R) ""       \
+                     Inc.   ""    \
+                     Series ""    \
+                     /X1550 ""    \
+                     Secondary "" \
+                     "DVI" ""     \
+                     "English" "" \
+                     "Engine" ""  \
+                                }
+
+#*******************************************************************

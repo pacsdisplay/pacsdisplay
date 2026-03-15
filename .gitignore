@@ -1,1 +1,3 @@
-*.db
+# Ignore all directories starting with underscore except _NEW
+_*/
+!_NEW/

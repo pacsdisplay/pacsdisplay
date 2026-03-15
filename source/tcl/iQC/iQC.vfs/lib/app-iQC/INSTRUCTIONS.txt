@@ -1,0 +1,63 @@
+
+ ---------------------------------------------------------
+           iQC Key Instructions and Bindings
+ ---------------------------------------------------------
+ To change image and window size
+
+       Right Arrow - Show larger image in larger window
+        Left Arrow - Show smaller image in smaller window
+
+ To change image size and pan image
+
+          Up Arrow - Show larger image in same window
+        Down Arrow - Show smaller image in same window
+        Left Mouse - Click and drag to pan image
+		
+ To change the image, right click
+ 
+        Available images:
+            TG270-pQC
+            TG270-sQC
+            TG270-ULN
+			
+ To change the gray level (ULN only)
+ 
+        Scroll Up/Down
+        Page Up/Down
+
+ ---------------------------------------------------------
+                    pQC Bar patterns
+ ---------------------------------------------------------
+
+ Contrast (2 sections of 4 regions);
+
+     Outer section - 8 gray levels
+     Inner section - 2 gray levels
+
+ Frequency (4 regions in each section);
+
+     4 pixels per line pair
+     6 pixels per line pair
+    12 pixels per line pair
+    18 pixels per line pair
+
+ ---------------------------------------------------------
+                    sQC Bar patterns
+ ---------------------------------------------------------
+
+ Contrast (bar patterns w/in squares);
+
+    Upper left -5 gray levels
+       (+3 in 0 square)
+    Lower left +5 gray levels
+       (-3 in 255 square)
+
+ ---------------------------------------------------------
+                      ULN patterns
+ ---------------------------------------------------------
+
+ 9 regions for uniformity and luminance
+ response measurements
+
+ ---------------------------------------------------------
+ 

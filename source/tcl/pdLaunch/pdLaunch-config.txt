@@ -1,0 +1,20 @@
+###########################################################################
+#                    pdLaunch.tcl                                         #
+#  Written by:                                                            #
+#    Nicholas B. Bevins (nick.bevins@mainehealth.org)                     #
+#                                                                         #
+#  Configurable parameters for pdLaunch.tcl                               #
+#    - Console                                                            #
+#    - Basekit (for executing tcl starkits)                               #
+#                                                                         #
+###########################################################################
+
+# pdLaunch configuration file
+# Edit this file to specify the Tcl runtime used to launch
+# pacsDisplay applications.
+
+#console show
+
+# Path to basekit or executable.
+# Default setting is to just use whatever is getting used to launch pdLaunch.kit
+set basekitExe [info nameofexecutable]

@@ -1,0 +1,46 @@
+#-----------------------------------------------------------------------#
+#                                                                       #
+#                         pdQC                                          #
+#                                                                       #
+#  Microsoft Windows applications to display grayscale test patterns    #
+#  and verify grayscale calibration.                                    #
+#                                                                       #
+#                           M. Flynn                                    #
+#                           N. Bevins                                   #
+#                           Feb 2026                                    #
+#                                                                       #
+#-----------------------------------------------------------------------#
+#                                                                       #
+#  GENERAL PUBLIC LICENSE:                                              #
+#  HFHS-pacsDisplay                                                     #
+#  Copyright (C) 2026  Henry Ford Health		                        #
+#-----------------------------------------------------------------------#
+#                                                                       #
+#                           pdQC usage                                  #
+#                                                                       #
+#  The pdQC folder is intended to be moved to portable storage          #
+#  so that pacsDisplay programs can be run on a workstation without     #
+#  installation of the full pacsDisplay package.                        #
+#  The primary usage is for QC validation of a DICOM grayscale          #
+#  luminance response whether by internal or graphic card LUTs.         #
+#                                                                       #
+#  This version uses starkits for distribution to decrease file         #
+#  sizes and improve the ability for the end user to modify the         #
+#  files through the use of starkit functionality (e.g., via sdx.kit).  #
+#  The various applications can be launched through the use of the      #
+#  pdLaunch application either by running pdLaunch.bat or manually      #
+#  opening pdLaunch.kit application using the basekit.exe               #
+#                                                                       #
+#  Upon opening, the pdLaunch application provides users with           #
+#  buttons to start the programs included in the pdQC set.              #
+#  The programs are the same as for pacsDisplay except for those        #
+#  associated with loading LUTs to the graphic card.                    #
+#  Reorganize the files at your own risk (likely to break).             #
+#                                                                       #
+#  NOTE: For some workstations, security settings may                   #
+#        prohibit running from a USB memory device.                     #
+#        In this case copy the pdQC folder to the workstation.          #
+#        If this is also prohibited, you will need to contact the       #
+#        system administrator to adjust the system settings.		    #
+#                                                                       #
+#-----------------------------------------------------------------------#

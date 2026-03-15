@@ -1,0 +1,3 @@
+# new LUT for test purposes - short file length
+# Read using loadLUT.exe, test with a gray ramp
+# Use to verify error for incorrect file format

@@ -1,0 +1,5 @@
+#This is a luminence phase table for lumResponse
+#16 mode, 2 measures at each level for dL/L (set R=G=B)
+2
+5	5	5
+11	11	11

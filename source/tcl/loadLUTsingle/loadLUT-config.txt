@@ -1,0 +1,18 @@
+###########################################################################
+#                    loadLUTsingle.tcl                                    #
+#  Written by:                                                            #
+#    Nicholas B. Bevins (nick.bevins@mainehealth.org)                     #
+#                                                                         #
+#  Configurable parameters for loadLUTsingle.tcl                          #
+#    - Console                                                            #
+#    - Common paths                                                       #
+#                                                                         #
+#						N.B Bevins	FEB 2026							  #
+###########################################################################
+#console show
+#
+#**********************************************************************
+#	Get the common paths.
+#
+	source [file join [file dirname [info script]] .. getInstalledPaths.txt]
+#**********************************************************************

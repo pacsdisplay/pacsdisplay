@@ -1,0 +1,33 @@
+
+ -------------------------------------------
+        gtest Key Bindings
+ -------------------------------------------
+
+        B1 - START (Hide focus pattern)
+
+ -------------------------------------------
+ Bindings on Gray Region
+
+          B1 - Change gray value by -15
+          B3 - Change gray value by +15
+     CTRL-B1 - Change gray value by -5
+     CTRL-B3 - Change gray value by +5
+     SHFT-B1 - Change gray value by -1
+     SHFT-B3 - Change gray value by +1
+      ALT-B1 - Show or hide focus pattern
+CTRL-SHFT-B1 - Show or hide RGB values
+      
+ -------------------------------------------
+ Bindings on Color Balance Values
+                   (upper right)
+
+        B1 - Change R, G, or B value by -15
+        B3 - Change R, G, or B value by +15
+   CTRL-B1 - Change R, G, or B value by -5
+   CTRL-B3 - Change R, G, or B value by +5
+   SHFT-B1 - Change R, G, or B value by -1
+   SHFT-B3 - Change R, G, or B value by +1
+    ALT-B1 - Set R, G, or B to solid color
+    ALT-B1 - If set, unset solid color
+
+ -------------------------------------------

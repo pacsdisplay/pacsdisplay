@@ -1,0 +1,9 @@
+# configuration file for LoadLUT.exe
+# 
+2		- Number of displays
+1		- Display number
+linearLUT.txt	- Calibration filename
+bakLUT1.txt	- Backup filename
+2
+linearLUT.txt
+bakLUT2.txt

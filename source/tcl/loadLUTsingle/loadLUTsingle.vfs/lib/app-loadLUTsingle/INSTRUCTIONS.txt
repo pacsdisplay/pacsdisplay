@@ -1,0 +1,20 @@
+LOAD LUT INSTRUCTIONS
+================================
+
+The loadLUTsingle application loads a LUT file to the graphics
+card of the system for a specified display ID. UTs can be 
+generated using the lutGenerate application and a corresponding 
+uLR file measured with the lumResponse application. The display
+ID is visible in the EDID profile, but may change if the system
+goes through a power cycle or if displays are added/removed.
+
+The full installation of pacsDisplay can be configured to 
+automatically load LUTs for all connected displays at startup, 
+enabling DICOM compliance for all configured displays. 
+
+LUT
+   Select LUT to select the desired LUT to load. The LUT should
+   correspond to the make/model of the display.
+   
+LOAD
+   LOAD the specified LUT to the specified Display ID

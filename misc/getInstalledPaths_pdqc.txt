@@ -1,0 +1,51 @@
+#**********************************************************************
+#
+#          getInstalledPaths script commands (pdQC starkits version)
+#
+#	A pacsDisplay TCL script commands to determine directory paths that
+#	are common to programs in the pacsDisplay package.
+#	This is typically sourced at the beginning within a config file.
+#
+#	pdQC applications are distributed with the following structure
+#	with each pd application (starkit) in its respective directory
+#
+#	pdQC
+#	├─_NEW/
+#	├─pacsDisplay-BIN/
+#	│   ├───ambtest/
+#	│   ├───EDIDprofile/
+#	│   ├───gtest/
+#	│   ├───i1meter/
+#	│   ├───iQC/
+#	│   ├───LIB
+#	│   ├───loadLUTsingle/
+#	│   ├───lumResponse/
+#	│   ├───lutGenerate/
+#	│   ├───uLRstats/
+#	│   └───uniLum/
+#	├─pdLaunch.bat
+#	├─pdLaunch.kit
+#	├─pdLaunch-config.txt
+#	├─basekit.exe
+#	├─QUICKSTART_pdQC.txt
+#	├─VERSION_INFO.txt
+#	└─GNU-GPL.txt
+#
+#  The following global variables are defined
+#      logDir        : Path to where log files are written (typically with the starkit)
+#      lumFilePath   : Path to _NEW directory for saving uLR/cLR files (typically top level)
+#      LIB           : Path to LIB in where common programs are stored (spotread, getEDID)
+#      gnuplot       : Path to the gnuplot executable in LIB.
+#
+#**********************************************************************
+# Get the paths to the log directory and the _NEW directory.
+	set logDir [file dirname $starkit::topdir]                                               
+	set lumFilePath [file join [file dirname [file dirname [file dirname $starkit::topdir]]] _NEW]
+
+#	Set the path to to the LIB routine
+    set LIB         [file join [file dirname [file dirname $starkit::topdir]] LIB]
+
+#	Folder in LIB for version of gnuplot distributed.
+    set gnuplot     [file join $LIB gnuplot46-bin wgnuplot.exe]
+#
+#**********************************************************************

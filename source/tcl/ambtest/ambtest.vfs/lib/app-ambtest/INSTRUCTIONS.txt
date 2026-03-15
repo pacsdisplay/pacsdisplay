@@ -1,0 +1,41 @@
+
+ ----------------------------------------
+	Ambient Light Visual Test
+ ----------------------------------------
+	A low contrast bar pattern is 
+	located randomly on the
+	background. Click on the pattern
+	to verify low contrast visual-
+	zation in the darkest part
+	of the operating range. 
+		
+	Adjustment of ambient lighting
+	or of the grayscale calibration
+	may be required to visualize.
+				
+		B1 (left click)
+			
+	Click on the low contrast
+	object with the left mouse
+	button. A success message
+	is displayed if object is 
+	clicked. If it's missed,
+	a failure is display.
+	
+		Move
+		
+	Click on Move to relocate
+	the low contrast object. 
+	
+		Change Contrast
+		(Shift-Click)
+		
+	Shift-click with the left
+	or right mouse buttons to
+	increase/decrease contrast
+	of the low contrast object.
+	One click increases by 
+	one gray level. Right/left
+	clicks on the current contrast
+	display will also adjust the
+	contrast.

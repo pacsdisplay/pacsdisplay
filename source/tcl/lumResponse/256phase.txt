@@ -1,0 +1,4 @@
+#This is a luminance phase table for lumResponse
+#256 mode (the same file is used for 52 and 18 (dGrey controls the step size))
+1
+0	0	0

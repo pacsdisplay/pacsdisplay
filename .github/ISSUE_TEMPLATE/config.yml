@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Download pacsDisplay
+    url: https://pacsdisplay.org
+    about: Download the latest release from the official website
+  - name: Documentation
+    url: https://github.com/pacsdisplay/pacsdisplay/tree/main/docs
+    about: Read the full documentation including build instructions and module details
+  - name: General Question
+    url: https://github.com/pacsdisplay/pacsdisplay/issues/new?labels=question&template=
+    about: Ask a general question (use blank issue with "Question:" prefix)

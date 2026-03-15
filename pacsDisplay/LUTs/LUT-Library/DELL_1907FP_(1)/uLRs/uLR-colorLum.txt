@@ -1,5 +1,0 @@
-# luminance for red (#ff0000), green (#00ff00) and blue (#0000ff)
-# 1 files
-#   r2g      b2g       Lmin      Lmax      red       grn       blu    FILE
-# 0.32211  0.11531     0.285   221.000    48.800   151.500    17.470  Average
-  0.32211  0.11531     0.285   221.000    48.800   151.500    17.470  uLR_DELL_1907FP_DC32365MAM24.txt
