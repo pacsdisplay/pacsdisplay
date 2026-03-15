@@ -1,4 +1,4 @@
-# Ignore all directories starting with underscore except _NEW
-_*/
+# Ignore all files and directories starting with underscore except _NEW
+_*
 !_NEW/
 !_NEW/**
