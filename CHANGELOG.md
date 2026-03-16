@@ -1,6 +1,6 @@
 # Comprehensive Changelog - pacsDisplay Project
 
-All notable changes to the pacsDisplay project are documented in this file, organized chronologically from newest to oldest. This comprehensive version includes all historical information extracted from source files and INSTRUCTIONS files.
+All notable changes to the pacsDisplay project are documented in this file, organized chronologically from newest to oldest. This comprehensive version includes all historical information extracted from source files, INSTRUCTIONS files, and devnotes.
 
 ---
 
