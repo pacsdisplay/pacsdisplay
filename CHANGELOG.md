@@ -56,27 +56,22 @@ All notable changes to the pacsDisplay project are documented in this file, orga
 
 **ambtest 1.2**
 - Updated to run from starkit
-- Bar pattern uniformity measurements
 
 **gtest 1.4**
 - Moved to starkit version
 - Updated for high dpi systems
-- Improved resize functionality
 
 **EDIDprofile 1.3**
 - Moved to starkit distribution format
 - Moved support scripts into subdir
-- Improved output formatting
 
 **QC-check 2.5** (lumResponse utility)
 - Updated to starkit distribution
-- Re-analyze cLR data with different Lamb values
 
 **uLRstats 1.2**
 - Updated to starkit distribution
 - Organized support scripts into tcl subdir within kit
 - Reverted to text-based help file
-- Improved generic LUT generation workflow
 
 **loadLUTsingle 1.4**
 - Revived for use within the pdQC application set
