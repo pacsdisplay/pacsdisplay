@@ -4,7 +4,7 @@ All notable changes to the pacsDisplay project are documented in this file, orga
 
 ---
 
-## Version 6.0 (2026-03)
+## Version 6A (2026-03)
 
 **Note:** This represents a major version bump from 5G to 6.0 due to significant architectural changes.
 
